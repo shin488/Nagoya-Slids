@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="ja" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <title>名古屋紹介 - impress.js版</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/impress/impress.js@0.5.3/css/impress-demo.css" />
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&display=swap" rel="stylesheet" />
+  <script>
+    document.documentElement.classList.remove('no-js');
+  </script>
+  <style>
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: radial-gradient(rgb(240,240,240) 0%, rgb(200,200,200) 100%);
+      color: #333;
+      overflow: hidden;
+    }
+    
+    /* 基本のステップスタイル */
+    .step {
+      position: relative;
+      width: 700px;
+      padding: 30px;
+      box-sizing: border-box;
+      text-align: left;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    
+    .step.active {
+      opacity: 1;
+      transition: opacity 1s;
+    }
+    
+    .step:not(.active) {
+      opacity: 0;
+    }
+    
+    /* テキストアニメーション */
+    .step h1, .step h2 {
+      margin-bottom: 15px;
+      transform: translateY(0);
+      opacity: 1;
+      transition: all 0.6s ease-out;
+      font-size: 1.8em;
+    }
+    
+    .step h2 {
+      font-size: 1.5em;
+    }
+    
+    .step:not(.active) h1,
+    .step:not(.active) h2 {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    
+    .step ul li {
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: all 0.4s ease-out;
+    }
+    
+    .step.active ul li {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .step.active ul li:nth-child(1) { transition-delay: 0.1s; }
+    .step.active ul li:nth-child(2) { transition-delay: 0.2s; }
+    .step.active ul li:nth-child(3) { transition-delay: 0.3s; }
+    .step.active ul li:nth-child(4) { transition-delay: 0.4s; }
+    .step.active ul li:nth-child(5) { transition-delay: 0.5s; }
+    
+    /* 画像スタイル */
+    .step img {
+      max-width: 60%;
+      max-height: 300px;
+      height: auto;
+      display: block;
+      margin: 15px auto;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      opacity: 0;
+      transform: scale(0.8);
+      transition: all 0.6s ease-out 0.3s;
+    }
+    
+    .step.active img {
+      opacity: 1;
+      transform: scale(1);
+    }
+    
+    /* タイトルスライド */
+    .step:first-child {
+      text-align: center;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    
+    .step:first-child h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+    }
+    
+    .step:first-child h2 {
+      font-size: 1.3em;
+      margin-bottom: 1em;
+    }
+    
+    /* リンクスタイル */
+    a {
+      color: #667eea;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    
+    a:hover {
+      color: #764ba2;
+      text-decoration: underline;
+    }
+    
+    /* リストスタイル */
+    ul {
+      line-height: 1.6;
+      font-size: 0.95em;
+    }
+    
+    strong {
+      color: #667eea;
+      font-weight: 700;
+    }
+    
+    /* 画像のキャプション */
+    p em {
+      font-size: 0.9em;
+      color: #666;
+      text-align: center;
+      display: block;
+      margin-top: -10px;
+    }
+    
+    /* 最後の俯瞰スライド */
+    #overview-all {
+      background: none;
+      box-shadow: none;
+    }
+    
+    /* プレゼンテーション中のビューポート */
+    .impress-enabled .step {
+      transition: all 0.6s ease-in-out;
+    }
+    
+    /* 基本のアニメーション設定 */
+    .impress-on-summary p,
+    .impress-on-summary ul li {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="impress" data-transition-duration="1000">
+    <div id="title" class="step" data-x="0" data-y="0" data-scale="1.5">
+      <h1>名古屋紹介</h1>
+      <h2>～中部地方の魅力～</h2>
+      <p>発表者: [あなたの名前]</p>
+    </div>
+
+    <div id="overview" class="step" data-x="1000" data-y="0" data-rotate="10" data-scale="0.8">
+      <h2>名古屋の概要</h2>
+      <ul>
+        <li><strong>位置</strong>: 日本の中部地方、愛知県の県庁所在地</li>
+        <li><strong>人口</strong>: 約230万人（2023年時点）</li>
+        <li><strong>気候</strong>: 温暖湿潤気候（夏は高温多湿、冬は比較的温暖）</li>
+        <li><strong>面積</strong>: 約326.45 km²</li>
+      </ul>
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Japan_natural_location_map_with_side_map_of_the_Ryukyu_Islands.jpg"
+        alt="日本地図（中部地方ハイライト）"
+      />
+      <p><em>CC BY-SA 3.0, via Wikimedia Commons</em></p>
+    </div>
+
+    <div id="history" class="step" data-x="2000" data-y="400" data-rotate="-10" data-scale="0.8">
+      <h2>歴史</h2>
+      <ul>
+        <li>16世紀: 織田信長の時代に名古屋城の前身が築かれる</li>
+        <li>1612年: 徳川家康により名古屋城築城、尾張藩の城下町として発展</li>
+        <li>明治以降: 工業都市として発展、現在は自動車産業の中心地の一つ</li>
+      </ul>
+    </div>
+
+    <div id="tourism" class="step" data-x="1000" data-y="1000" data-rotate="20" data-scale="0.9">
+      <h2>観光名所</h2>
+      <ul>
+        <li><strong>名古屋城</strong>: 金の鯱がシンボル</li>
+        <li><strong>熱田神宮</strong>: 三種の神器の一つ「草薙剣」を奉斎</li>
+        <li><strong>名古屋テレビ塔</strong>: 久屋大通公園に位置するテレビ塔</li>
+      </ul>
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Nagoya_Castle_Aerial_photograph_2020.jpg"
+        alt="名古屋城 空撮"
+      />
+      <p><em>CC0, via Wikimedia Commons</em></p>
+    </div>
+
+    <div id="food" class="step" data-x="0" data-y="800" data-rotate-z="-15" data-rotate-y="30" data-scale="0.8">
+      <h2>名古屋めし</h2>
+      <ul>
+        <li><strong>味噌カツ</strong>: 八丁味噌ベースの甘辛いソースをかけたとんかつ</li>
+        <li><strong>ひつまぶし</strong>: うなぎの蒲焼きご飯を三度楽しむ</li>
+        <li><strong>手羽先</strong>: カリっと香ばしいスパイシーな鳥手羽先</li>
+        <li><strong>きしめん</strong>: 平打ちのうどん</li>
+      </ul>
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Hitsumabushi1.jpg"
+        alt="ひつまぶし"
+      />
+      <p><em>CC0, via Wikimedia Commons</em></p>
+    </div>
+
+    <div id="culture" class="step" data-x="-1000" data-y="1000" data-rotate="-30" data-scale="1">
+      <h2>文化・祭り</h2>
+      <ul>
+        <li><strong>山王祭</strong>: 熱田神宮の祭礼、大規模な山車行列</li>
+        <li><strong>名古屋まつり</strong>: 織田信長・豊臣秀吉・徳川家康の行列</li>
+        <li><strong>七夕まつり</strong>: 吹上地区で開催</li>
+      </ul>
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/c/c6/Nagoyamatsuri3.JPG"
+        alt="名古屋まつり"
+      />
+      <p><em>Photo: Bariston, CC BY-SA 4.0, via Wikimedia Commons</em></p>
+    </div>
+
+    <div id="summary" class="step" data-x="0" data-y="0" data-z="-2000" data-rotate-x="-90" data-scale="2">
+      <h2>まとめ & お問い合わせ</h2>
+      <ul>
+        <li>名古屋の魅力を再確認
+          <ul>
+            <li>歴史、観光、食文化、祭り</li>
+          </ul>
+        </li>
+        <li>参考リンク:
+          <ul>
+            <li><a href="https://www.city.nagoya.jp/">名古屋市公式サイト</a></li>
+            <li><a href="https://www.nagoya-info.jp/">名古屋観光情報</a></li>
+          </ul>
+        </li>
+      </ul>
+      <p>ご清聴ありがとうございました。</p>
+      <p>質問がありましたらどうぞ！</p>
+    </div>
+    
+    <div id="overview-all" class="step" data-x="300" data-y="500" data-z="-3000" data-scale="5">
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/impress.js/0.5.3/impress.min.js"></script>
+  <script>impress().init();</script>
+</body>
+</html>
