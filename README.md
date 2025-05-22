@@ -1,6 +1,6 @@
-# 名古屋紹介 impress.js プレゼンテーション
+# 長野県伊那市紹介 impress.js プレゼンテーション
 
-impress.jsを使用した名古屋市紹介のシングルページHTMLプレゼンテーションです。
+impress.jsを使用した長野県伊那市紹介のシングルページHTMLプレゼンテーションです。
 
 ## impress.jsとは
 
