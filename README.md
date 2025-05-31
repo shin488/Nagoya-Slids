@@ -103,21 +103,81 @@ impress.jsは仮想カメラを以下のように制御：
 国内外でスマートシティの取り組みが進んでいます。例えば、スイスのチューリヒやノルウェーのオスロなどがスマートシティランキングで上位にランクインしています。日本では、内閣府や総務省、経済産業省などが共同でスマートシティ官民連携プラットフォームを運営し、スマートシティ構想を推進しています。
 
 ```
-タイトル (x:0, y:0, scale:1.5)
- ↓
-概要 (x:1000, y:0, rotate:10°)
- ↓
-歴史 (x:2000, y:400, rotate:-10°) 
- ↓
-観光名所 (x:1000, y:1000, rotate:20°)
- ↓
-名古屋めし (x:0, y:800, rotateZ:-15°, rotateY:30°)
- ↓
-文化・祭り (x:-1000, y:1000, rotate:-30°)
- ↓
-まとめ (x:0, y:0, z:-2000, rotateX:-90°, scale:2)
- ↓
-俯瞰ビュー (x:300, y:500, z:-3000, scale:5)
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>長野県伊那市のスマートシティ紹介</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+        }
+        section {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+        }
+        h2 {
+            color: #2980b9;
+        }
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+        li {
+            color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>長野県伊那市のスマートシティ紹介</h1>
+    </header>
+    <section>
+        <h2>概要</h2>
+        <p>長野県伊那市は、スマートシティとしての取り組みを進めています。地域の課題を解決し、住民の生活を向上させるために、最新の技術を活用しています。</p>
+    </section>
+    <section>
+        <h2>スマートシティの特徴</h2>
+        <ul>
+            <li>環境に優しいエネルギー管理システム</li>
+            <li>高度な交通管理システム</li>
+            <li>地域医療の充実</li>
+            <li>教育のデジタル化</li>
+            <li>防災対策の強化</li>
+        </ul>
+    </section>
+    <section>
+        <h2>具体的な取り組み</h2>
+        <p>伊那市では、以下のような具体的な取り組みを行っています。</p>
+        <ul>
+            <li>太陽光発電と蓄電池を活用したエネルギー管理</li>
+            <li>スマート交通信号による交通渋滞の緩和</li>
+            <li>遠隔医療サービスの導入</li>
+            <li>オンライン教育プラットフォームの提供</li>
+            <li>災害時の情報共有システムの構築</li>
+        </ul>
+    </section>
+    <section>
+        <h2>未来への展望</h2>
+        <p>伊那市は、今後もスマートシティとしての取り組みを進化させ、住民が安心して暮らせる環境を提供していくことを目指しています。</p>
+    </section>
+</body>
+</html>
+
 ```
 
 ### 6. 特殊効果
